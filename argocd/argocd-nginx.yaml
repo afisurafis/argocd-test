@@ -6,13 +6,13 @@ metadata:
     argocd-image-updater.argoproj.io/testing.update-strategy: 'digest' #There are several ways to update the image, but I'm using digest
     argocd-image-updater.argoproj.io/git-branch: 'master'
     argocd-image-updater.argoproj.io/testing.force-update: 'true'
-    argocd-image-updater.argoproj.io/write-back-method: 'git:secret:argocd/git-creds'
+    argocd-image-updater.argoproj.io/write-back-method: 'git:secret:argocd/argocd-token'
   name: argocd-nginx
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: git@github.com:irfanrizkiantopratama/argocd-test.git
+    repoURL: git@github.com:afisurafis/argocd-test.git
     targetRevision: HEAD
     path: k8s/nginx
   sources: []
